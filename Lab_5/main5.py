@@ -40,17 +40,17 @@ def animate(i):
     # x, y данные на графике
 
     # First trajectory
-    x1 = t * np.sin(tt)
+    x1 = (t * np.sin(tt)) - 7
     y1 = t * np.cos(tt)
 
-    bx1 = t * np.sin(tt)
+    bx1 = (t * np.sin(tt)) - 7
     by1 = t * np.cos(tt)
 
     # Second trajectory
-    x2 = t * np.sin(t) + 10
+    x2 = t * np.sin(t) + 5
     y2 = t * np.cos(t) + 6
 
-    bx2 = (t * np.sin(t)) + 10
+    bx2 = (t * np.sin(t)) + 5
     by2 = (t * np.cos(t)) + 6
 
     # добавление новых точек в список точек осей x, y
@@ -69,8 +69,7 @@ def animate(i):
     difference_x = fabs(x1 - x2) * 10
     difference_y = fabs(y1 - y2) * 10
 
-
-    if (difference_x < 100 and difference_y < 100):
+    if (difference_x < 90 and difference_y < 90):
         new_color1 = colors[random.randint(0, len(colors) - 1)]
         new_color2 = colors[random.randint(0, len(colors) - 1)]
         ball1.set(color=new_color1)
